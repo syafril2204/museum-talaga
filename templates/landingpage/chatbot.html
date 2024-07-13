@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Museum</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static', filename='images/Logos.png') }}"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/landingpage.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"
+      integrity="sha512-Ysw1DcK1P+uYLqprEAzNQJP+J4hTx4t/3X2nbVwszao8wD+9afLjBQYjz7Uk4ADP+Er++mJoScI42ueGtQOzEA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.css"
+      integrity="sha512-pmAAV1X4Nh5jA9m+jcvwJXFQvCBi3T17aZ1KWkqXr7g/O2YMvO8rfaa5ETWDuBvRq6fbDjlw4jHL44jNTScaKg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
+    <style>
+      table,
+      th,
+      td {
+        border: 5px solid #fff;
+      }
+      .bot {
+        padding-left: 200px;
+      }
+
+      .card-petunjuk {
+        background-color: #fff;
+        width: 400px;
+      }
+
+      .card {
+        width: 750px;
+      }
+
+      img {
+        border-radius: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="adminActions">
+      <input type="checkbox" name="adminToggle" class="adminToggle" />
+      <a class="adminButton" href="/chatbot"
+        ><i class="fa-brands fa-rocketchat"></i
+      ></a>
+    </div>
+    <nav class="navbar navbar-expand-lg bg-light navbar-light fixed-top">
+      <!-- Container wrapper -->
+      <div class="container-fluid px-5">
+        <!-- Navbar brand -->
+        <a class="navbar-brand" href="/">
+          <img
+            src="{{ url_for('static', filename='images/logo.png') }}"
+            alt="Logo"
+            class="d-inline align-text-top"
+            style="width: 50px"
+          />
+        </a>
+
+        <div class="container d-block">
+          <p class="primary-color fw-bold fs-5 m-0 ml-2">
+            Museum Talaga Manggung
+          </p>
+          <p class="fs-6 primary-color m-0">
+            Balai Konservasi Sejarah Budaya Sunda
+          </p>
+        </div>
+        <!-- Toggle button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-mdb-toggle="collapse"
+          data-mdb-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Collapsible wrapper -->
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarSupportedContent"
+        >
+          <!-- Left links -->
+          <ul class="navbar-nav ms-auto mb-2 px-5 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link fs-6 primary-color" href="/">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link fs-6 primary-color"
+                aria-current="page"
+                href="/tentang"
+                >Tentang</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-6 primary-color" href="/informasi"
+                >Informasi
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active fs-6 primary-color"
+                href="/seputar-tamabot"
+                >Seputar&nbsp;Tamabot</a
+              >
+            </li>
+            <!-- <li class="nav-item">
+            <a
+              class="nav-link fs-6 text-light border rounded-circle px-3 bg-success border-success"
+              href="#"
+              ><i class="fa-brands fa-rocketchat"></i
+            ></a>
+          </li> -->
+          </ul>
+          <!-- Left links -->
+        </div>
+        <!-- Collapsible wrapper -->
+      </div>
+      <!-- Container wrapper -->
+    </nav>
+
+    <div class="container-fluid px-5" style="margin-top: 120px">
+      <nav aria-label="breadcrumb" style="background-color: #f8f8f8">
+        <ol class="breadcrumb py-2 px-4">
+          <li class="breadcrumb-item">
+            <a href="/"
+              ><i style="color: #703200" class="fa-solid fa-house"></i
+            ></a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">
+            Seputar Tamabot
+          </li>
+        </ol>
+      </nav>
+    </div>
+
+    <div class="container-fluid mt-5 mb-5">
+      <div class="row px-5">
+        <div class="col-lg-6 mt-2">
+          <h1 class="primary-color fw-bold fs-3 mb-5 mt-5">Tamabot</h1>
+          <p class="text-dark fw-normal">
+            TAMABOT adalah chatbot yang dirancang sebagai layanan informasi
+            interaktif yang inovatif dan efisien di Museum Talaga Manggung.
+            Menggabungkan kecerdasan buatan dengan keahlian dalam bidang
+            sejarah, seni, dan budaya lokal, TAMABOT bertujuan untuk memperkaya
+            pengalaman pengunjung dan memfasilitasi pemahaman yang lebih dalam
+            tentang benda peninggalan sejarah yang berada di Museum Talaga
+            Manggung.
+          </p>
+        </div>
+        <div class="col-lg-6 bot">
+          <img
+            src="{{ url_for('static', filename='images/tama.png') }}"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid py-5" style="background-color: #f5ede6">
+      <h3 style="color: #703200" class="text-center fw-bold py-5">
+        Petunjuk Penggunaan Tamabot
+      </h3>
+
+      <div class="row">
+        <div class="col-lg-8 d-flex justify-content-center">
+          <div class="card text-center p-5">
+            <div class="card-title fw-bold fs-4">
+              Masuk pada halaman beranda
+            </div>
+            <div class="card-body text-center fs-6">
+              Mulailah dengan masuk ke halaman beranda website Museum Talaga
+              Manggung
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <img
+            src="{{ url_for('static', filename='images/tunjuk.png') }}"
+            alt=""
+            style="width: 450px"
+          />
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col-lg-8 d-flex justify-content-center">
+          <div class="card text-center p-5">
+            <div class="card-title fw-bold fs-4">
+              Klik icon chatbot pada pojok kanan bawah
+            </div>
+            <div class="card-body text-center fs-6">
+              Pada pojok kanan layar, temukan dan klik ikon chatbot untuk
+              memulai percakapan.
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <img
+            src="{{ url_for('static', filename='images/tunjuk1.png') }}"
+            alt=""
+            style="width: 450px"
+          />
+        </div>
+        <div class="row mt-5">
+          <div class="col-lg-8 d-flex justify-content-center">
+            <div class="card text-center p-5">
+              <div class="card-title fw-bold fs-4">
+                Tanyakan pertanyaan pada Tamabot
+              </div>
+              <div class="card-body text-center fs-6">
+                Tamabot melalui chat tersebut, selamat menikmati pengalaman baru
+                dalam kunjungan di Museum Talaga Manggung!
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <img
+              src="{{ url_for('static', filename='images/tunjuk2.png') }}"
+              alt=""
+              style="width: 450px"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container py-5 mt-5">
+      <h2 class="text-center primary-color fw-bold mb-5">
+        Yang Bisa di Tanyakan Di Tamabot
+      </h2>
+
+      <div class="container d-flex justify-content-center mb-5">
+        <div class="row px-5 mb-5 g-5">
+          <div style="margin-right: 120px" class="col-lg-5 px-5 g-5">
+            <div class="card px-3 fitur" style="width: 410px">
+              <div class="d-inline py-3">
+                <i
+                  class="fa-solid fa-building-columns primary-color fs-2 py-5 px-3 mt-5 d-inline align-middle"
+                ></i>
+                <!-- Tulisan -->
+                <p class="text-center fw-bold ml-5 d-inline align-middle">
+                  Sejarah Museum Talaga
+                </p>
+              </div>
+
+              <div class="card-body">
+                <p class="card-text">
+                  Tamabot memberikan informasi terkait dengan sejarah Museum
+                  Talaga Manggung.
+                </p>
+              </div>
+            </div>
+            <div class="card px-3 mt-5 fitur" style="width: 410px">
+              <div class="d-inline py-3">
+                <i
+                  class="fa-solid fa-folder primary-color py-5 px-3 mt-5 d-inline align-middle fs-1"
+                ></i>
+
+                <!-- Tulisan -->
+                <p class="text-center fw-bold ml-5 d-inline align-middle">
+                  Layanan Informasi
+                </p>
+              </div>
+
+              <div class="card-body">
+                <p class="card-text">
+                  Tamabot memberikan informasi terkait layanan informasi yang
+                  berada di Museum Talaga Manggung, fasilitas dan acara
+                  kebudayaan.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5 px-5 mt-5">
+            <div class="card px-3 fitur" style="width: 410px">
+              <div class="d-inline py-3">
+                <i
+                  class="fa-solid fa-bottle-droplet primary-color py-5 px-3 mt-5 d-inline align-middle fs-1"
+                ></i>
+                <!-- Tulisan -->
+                <p class="text-center fw-bold ml-5 d-inline align-middle">
+                  Benda Peninggalan
+                </p>
+              </div>
+
+              <div class="card-body">
+                <p class="card-text">
+                  Tamabot memberikan informasi terkait benda-benda peninggalan
+                  di Museum Talaga Manggung meliputi deskripsi dan sejarah
+                  singkat.
+                </p>
+              </div>
+            </div>
+            <div class="card px-3 mt-5 fitur" style="width: 410px">
+              <div class="d-inline py-3">
+                <i
+                  class="fa-solid fa-book-open fs-1 primary-color py-5 px-3 mt-5 d-inline align-middle"
+                ></i>
+                <!-- Tulisan -->
+                <p class="text-center fw-bold ml-5 d-inline align-middle">
+                  Tata cara kunjungan
+                </p>
+              </div>
+
+              <div class="card-body">
+                <p class="card-text">
+                  Tamabot memberikan informasi seputar tata cara kunjungan,
+                  memberikan panduan dan informasi terkait prosedur.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container-fluid footer">
+        <div class="row">
+          <div class="col-lg-4 p-5">
+            <h4 class="fw-bold text-light mb-5">INF0RMASI</h4>
+            <p class="text-light mb-3">
+              Yayasan Talaga Manggung Simbar Kantjana
+            </p>
+            <p class="text-light">
+              Jln. Talaga Majalengka No. 1, Talagawetan, Kec. Talaga, Kabupaten
+              Majalengka, Jawa Barat 45465
+            </p>
+            <p class="text-light">
+              WA: 0821-2055-7792 <br />
+              Fax: N/A <br />
+              E-mail: museumtalagamanggung@gmail.com
+            </p>
+          </div>
+
+          <div class="col-lg-4 p-5">
+            <h4 class="fw-bold text-light mb-5">NARAHUBUNG</h4>
+            <i class="fa-brands fa-instagram text-light fs-4 px-2"></i>
+            <i class="fa-brands fa-youtube text-light fs-4 px-2"></i>
+            <i class="fa-brands fa-facebook text-light fs-4 px-2"></i>
+            <i class="fa-brands fa-tiktok text-light fs-4 px-2"></i>
+          </div>
+          <div class="col-lg-4 p-5">
+            <div class="d-flex align-items-center">
+              <img
+                src="{{ url_for('static', filename='images/logo-footer.png') }}"
+                alt="Logo"
+                style="width: 50px; margin-right: 10px"
+              />
+              <div class="ml-2">
+                <p class="text-light fw-bold fs-5 m-0">
+                  Museum Talaga Manggung
+                </p>
+                <p class="fs-6 text-light m-0">
+                  Balai Konservasi Sejarah Budaya Sunda
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        style="background-color: #281608; padding: 20px"
+        class="container-fluid text-center"
+      >
+        <p style="color: #5b5b5b">
+          <span style="color: #ffff"
+            >Yayasan Talaga Manggung Simbar Kantjana 2024.
+          </span>
+          All Rights Reserved. Powered by
+          <span style="color: #ffff">No Name</span>
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      var swiper = new Swiper(".slide-content", {
+        slidesPerView: 4,
+        spaceBetween: 25,
+        loop: true,
+        centerSlide: "true",
+        fade: "true",
+        grabCursor: "true",
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+          dynamicBullets: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          0: {
+            slidesPerView: 1,
+          },
+          520: {
+            slidesPerView: 2,
+          },
+          950: {
+            slidesPerView: 3,
+          },
+        },
+      });
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

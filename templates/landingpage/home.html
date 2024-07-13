@@ -1,0 +1,1657 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Museum</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@unocss/reset/normalize.min.css"
+    />
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static', filename='images/Logos.png') }}"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/landingpage.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"
+      integrity="sha512-Ysw1DcK1P+uYLqprEAzNQJP+J4hTx4t/3X2nbVwszao8wD+9afLjBQYjz7Uk4ADP+Er++mJoScI42ueGtQOzEA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.css"
+      integrity="sha512-pmAAV1X4Nh5jA9m+jcvwJXFQvCBi3T17aZ1KWkqXr7g/O2YMvO8rfaa5ETWDuBvRq6fbDjlw4jHL44jNTScaKg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
+
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
+        font-size: 100px;
+      }
+
+      .card-img-top {
+        border-radius: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="adminActions">
+      <input type="checkbox" name="adminToggle" class="adminToggle" />
+      <a class="adminButton" href="/chatbot"
+        ><i class="fa-brands fa-rocketchat"></i
+      ></a>
+    </div>
+    <nav class="navbar navbar-expand-lg bg-light navbar-light fixed-top">
+      <!-- Container wrapper -->
+      <div class="container-fluid px-5">
+        <!-- Navbar brand -->
+        <a class="navbar-brand" href="/">
+          <img
+            src="{{ url_for('static', filename='images/logo.png') }}"
+            alt="Logo"
+            class="d-inline align-text-top"
+            style="width: 50px"
+          />
+        </a>
+
+        <div class="container d-block">
+          <p class="primary-color fw-bold fs-5 m-0 ml-2">
+            Museum Talaga Manggung
+          </p>
+          <p class="fs-6 primary-color m-0">
+            Balai Konservasi Sejarah Budaya Sunda
+          </p>
+        </div>
+        <!-- Toggle button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-mdb-toggle="collapse"
+          data-mdb-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Collapsible wrapper -->
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarSupportedContent"
+        >
+          <!-- Left links -->
+          <ul class="navbar-nav ms-auto mb-2 px-5 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active fs-6 primary-color" href="/">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link fs-6 primary-color"
+                aria-current="page"
+                href="/tentang"
+                >Tentang</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-6 primary-color" href="/informasi"
+                >Informasi
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-6 primary-color" href="/seputar-tamabot"
+                >Seputar&nbsp;Tamabot</a
+              >
+            </li>
+            <!-- <li class="nav-item">
+          <a
+            class="nav-link fs-6 text-light border rounded-circle px-3 bg-success border-success"
+            href="#"
+            ><i class="fa-brands fa-rocketchat"></i
+          ></a>
+        </li> -->
+          </ul>
+          <!-- Left links -->
+        </div>
+        <!-- Collapsible wrapper -->
+      </div>
+      <!-- Container wrapper -->
+    </nav>
+    <!-- Navbar -->
+
+    <div
+      id="carouselExampleInterval"
+      style="margin-top: 15px"
+      class="carousel slide"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleInterval"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleInterval"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleInterval"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleInterval"
+          data-bs-slide-to="3"
+          aria-label="Slide 4"
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="3000">
+          <img
+            src="{{ url_for('static', filename='images/section1-1.png') }}"
+            class="d-block w-100"
+            alt="..."
+          />
+
+          <div
+            class="carousel-caption d-flex flex-column h-100 align-items-center justify-content-center bottom-0"
+          >
+            <h2 class="fw-bold fs-1 bg-opacity-50 px-2">
+              <span class="hero-color">MUSEUM</span> TALAGA MANGGUNG
+            </h2>
+            <p class="bg-opacity-50 px-1">
+              Balai Konservasi Sejarah Budaya Sunda
+            </p>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="3000">
+          <img
+            src="{{ url_for('static', filename='images/section1-2.png') }}"
+            class="d-block w-100"
+            alt="..."
+          />
+
+          <div
+            class="carousel-caption d-flex flex-column h-100 align-items-center justify-content-center bottom-0"
+          >
+            <h2 class="fw-bold fs-1 bg-opacity-50 px-2">
+              <span class="hero-color">Jejak Sejarah, </span>Perjalanan
+              Kebudayaan
+            </h2>
+            <p class="bg-opacity-50 px-1">
+              Tempat yang memamerkan kekayaan budaya dan sejarah Majalengka
+            </p>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="3000">
+          <img
+            src="{{ url_for('static', filename='images/section1-3.png') }}"
+            class="d-block w-100"
+            alt="..."
+          />
+
+          <div
+            class="carousel-caption d-flex flex-column h-100 align-items-center justify-content-center bottom-0"
+          >
+            <h2 class="fw-bold fs-1 bg-opacity-50 px-2">
+              <span class="hero-color">Pemeliharaan Warisan, </span>
+              Pembelajaran Abadi
+            </h2>
+            <p class="bg-opacity-50 px-1">
+              Memperkenalkan budaya lokal kepada generasi mendatang
+            </p>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="3000">
+          <img
+            src="{{ url_for('static', filename='images/section1-4.png') }}"
+            class="d-block w-100"
+            alt="..."
+          />
+
+          <div
+            class="carousel-caption d-flex flex-column h-100 align-items-center justify-content-center bottom-0"
+          >
+            <h2 class="fw-bold fs-1 bg-opacity-50 px-2">
+              <span class="hero-color">Menyimpan Kisah, </span>
+              Memuliakan Tradisi
+            </h2>
+            <p class="bg-opacity-50 px-1">
+              Menceritakan kisah yang berharga tentang kehidupan dan kebudayaan
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button> -->
+      <!-- <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button> -->
+    </div>
+
+    <div class="container-fluid mt-5">
+      <div class="row">
+        <div class="col-lg-6">
+          <h1 class="fs-1 primary-color fw-bold px-5" style="font-size: 22px">
+            Apa Sih Itu Tamabot?
+          </h1>
+          <p class="px-5 text-dark fs-5">
+            <span class="fw-bold">TAMABOT</span> adalah chatbot yang dirancang
+            sebagai layanan informasi interaktif yang inovatif dan efisien di
+            Museum Talaga Manggung. Menggabungkan kecerdasan buatan dengan
+            keahlian dalam bidang sejarah, seni, dan budaya lokal, TAMABOT
+            bertujuan untuk memperkaya pengalaman pengunjung dan memfasilitasi
+            pemahaman yang lebih dalam tentang benda peninggalan sejarah yang
+            berada di Museum Talaga Manggung.
+          </p>
+          <a
+            href="/seputar-tamabot"
+            style="background-color: #703200; border: none; margin-left: 40px"
+            class="btn btn-primary fs-5 mt-3"
+            >Lihat Selengkapnya</a
+          >
+        </div>
+        <div class="col-lg-6">
+          <img
+            src="{{ url_for('static', filename='images/section2-1.png') }}"
+            class="d-inline w-10"
+            alt="..."
+          />
+          <img
+            src="{{ url_for('static', filename='images/section2-2.png') }}"
+            class="d-inline w-10"
+            alt="..."
+          />
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="container-fluid mt-5"
+      style="background-color: #f5ede6; padding-bottom: 10px"
+    >
+      <div class="px-5">
+        <h2 class="primary-color fw-semibold" style="padding-top: 50px">
+          Artikel
+        </h2>
+      </div>
+
+      <div
+        class="slide-container swiper mb-5 p-1"
+        style="margin-left: 0; margin-right: 0"
+      >
+        <div class="slide-content">
+          <div class="card-wrapper swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="card sled">
+                <img
+                  src="{{ url_for('static', filename='images/berita1.png') }}"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <button
+                  style="
+                    background-color: #703200;
+                    border-radius: 5px;
+                    width: 90px;
+                    margin-left: 25px;
+                  "
+                  class="btn-primary text-light"
+                >
+                  2024
+                </button>
+                <div class="card-body" style="padding-top: 0">
+                  <h5 class="card-title primary-color fw-bold mb-3">
+                    <br />
+                    Nyiramkeun Pusaka
+                  </h5>
+                  <p class="card-text">
+                    Upacara adat Nyiramkeun adalah salah satu tradisi kuno yang
+                    masih dilestarikan. Salah satu aspek yang sangat penting
+                    dalam upacara ini adalah penggunaan tujuh mata air yang
+                    memiliki simbolisme mendalam. Mari kita mengungkap makna
+                    dari kehadiran tujuh mata air dalam upacara adat Nyiramkeun:
+                    ...
+                  </p>
+
+                  <a
+                    class="position-absolute bottom-0 end-0 p-2 text-dark fs-6"
+                    style="
+                      text-decoration: none;
+                      background-color: #bb977b9e;
+                      border-radius: 10px;
+                    "
+                    href="/Nyiramkeun-Pusaka"
+                    >selengkapnya</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card sled">
+                <img
+                  src="{{ url_for('static', filename='images/berita2.png') }}"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <button
+                  style="
+                    background-color: #703200;
+                    border-radius: 5px;
+                    width: 90px;
+                    margin-left: 25px;
+                  "
+                  class="btn-primary text-light"
+                >
+                  2024
+                </button>
+                <div class="card-body" style="padding-top: 0">
+                  <h5 class="card-title primary-color fw-bold mb-3">
+                    <br />
+                    Bumi Ageung: Memeliharaan Kejayaan Melalui Benda Pusaka
+                  </h5>
+                  <p class="card-text">
+                    Bumi Ageung, yang secara harfiah berarti "Bumi Besar", bukan
+                    hanya sebuah tempat fisik, tetapi juga suatu konsep dan
+                    warisan budaya yang kaya. Terletak di Kecamatan Talaga. Bumi
+                    Ageung telah lama menjadi tempat penyimpanan dan penjagaan
+                    benda-benda pusaka yang memiliki nilai ...
+                  </p>
+
+                  <a
+                    class="position-absolute bottom-0 end-0 p-2 mt-5 text-dark fs-6"
+                    style="
+                      text-decoration: none;
+                      background-color: #bb977b9e;
+                      border-radius: 10px;
+                    "
+                    href="/Bumi-Ageung"
+                    >selengkapnya</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card sled">
+                <img
+                  src="{{ url_for('static', filename='images/berita3.png') }}"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <button
+                  style="
+                    background-color: #703200;
+                    border-radius: 5px;
+                    width: 90px;
+                    margin-left: 25px;
+                  "
+                  class="btn-primary text-light"
+                >
+                  2023
+                </button>
+                <div class="card-body" style="padding-top: 0">
+                  <h5 class="card-title primary-color fw-bold mb-3">
+                    <br />
+                    Nyiramkeun Arca Simbar Kancana yang Menjadi Sejarah
+                  </h5>
+                  <p class="card-text">
+                    Nyiramkeun adalah salah satu upacara adat yang kaya akan
+                    makna dan simbolisme di budaya Sunda. Salah satu praktik
+                    penting dalam upacara ini adalah Nyiramkeun arca Simbar
+                    Kancana, sebuah tindakan penghormatan dan kepercayaan yang
+                    mendalam terhadap arca yang ...
+                  </p>
+
+                  <a
+                    class="position-absolute bottom-0 end-0 p-2 text-dark fs-6"
+                    style="
+                      text-decoration: none;
+                      background-color: #bb977b9e;
+                      border-radius: 10px;
+                    "
+                    href="/Nyiramkeun-Arca-Simbar"
+                    >selengkapnya</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card sled">
+                <img
+                  src="{{ url_for('static', filename='images/berita4.png') }}"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <button
+                  style="
+                    background-color: #703200;
+                    border-radius: 5px;
+                    width: 90px;
+                    margin-left: 25px;
+                  "
+                  class="btn-primary text-light"
+                >
+                  2023
+                </button>
+                <div class="card-body" style="padding-top: 0">
+                  <h5 class="card-title primary-color fw-bold mb-3">
+                    <br />
+                    Temuan Batu Bergores (Scratched Stone) di Banjaran
+                  </h5>
+                  <p class="card-text">
+                    Pada Sabtu, 20 Mei 2023, Tim Balai Konservasi Sejarah dan
+                    Budaya Talaga Manggung dari Yayasan Talaga Manggung Simbar
+                    Kantjana, bersama dengan Paguyuban Walangsuji Talaga
+                    Manggung, menemukan sebuah objek yang diduga sebagai benda
+                    Cagar Budaya berbentuk batu dengan goresan horizontal yang
+                    ...
+                  </p>
+
+                  <a
+                    class="position-absolute bottom-0 end-0 p-2 text-dark fs-6"
+                    style="
+                      text-decoration: none;
+                      background-color: #bb977b9e;
+                      border-radius: 10px;
+                    "
+                    href="/Temuan-Batu-Bergores"
+                    >selengkapnya</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card sled">
+                <img
+                  src="{{ url_for('static', filename='images/berita5.png') }}"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <button
+                  style="
+                    background-color: #703200;
+                    border-radius: 5px;
+                    width: 90px;
+                    margin-left: 25px;
+                  "
+                  class="btn-primary text-light"
+                >
+                  2023
+                </button>
+                <div class="card-body" style="padding-top: 0">
+                  <h5 class="card-title primary-color fw-bold mb-3">
+                    <br />
+                    Memperbaharui Kejayaan: Renovasi Kereta Kencana Sanghyang
+                    Panglurah
+                  </h5>
+                  <p class="card-text">
+                    Kereta kencana Sanghyang Panglurah adalah salah satu warisan
+                    budaya yang mengagumkan dari masa lalu, menceritakan
+                    kejayaan dan kemuliaan sebuah peradaban. Namun, seperti
+                    halnya artefak bersejarah lainnya, waktu dan cuaca
+                    memengaruhi keadaan kereta kencana ini. Oleh karena itu,
+                    sebuah proyek ...
+                  </p>
+
+                  <a
+                    class="position-absolute bottom-0 end-0 p-2 text-dark fs-6"
+                    style="
+                      text-decoration: none;
+                      background-color: #bb977b9e;
+                      border-radius: 10px;
+                    "
+                    href="/Memperbaharui-Kejayaan"
+                    >selengkapnya</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="text-center mt-5">
+        <h2 class="primary-color fw-semibold mb-4">Pusat Galeri</h2>
+      </div>
+
+      <div class="row px-5">
+        <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
+          <img
+            src="{{ url_for('static', filename='images/galeri1.png') }}"
+            class="w-100 shadow-1-strong rounded mb-4"
+          />
+
+          <img
+            src="{{ url_for('static', filename='images/galeri5.png') }}"
+            class="w-100 shadow-1-strong rounded mb-4"
+          />
+        </div>
+
+        <div class="col-lg-3 mb-4 mb-lg-0">
+          <img
+            src="{{ url_for('static', filename='images/galeri2.png') }}"
+            class="w-100 shadow-1-strong rounded mb-4"
+          />
+
+          <img
+            src="{{ url_for('static', filename='images/galeri6.png') }}"
+            class="w-100 shadow-1-strong rounded mb-4"
+          />
+        </div>
+
+        <div class="col-lg-3 mb-4 mb-lg-0">
+          <img
+            src="{{ url_for('static', filename='images/galeri3.png') }}"
+            class="w-100 shadow-1-strong rounded mb-4"
+          />
+
+          <img
+            src="{{ url_for('static', filename='images/galeri7.png') }}"
+            class="w-100 shadow-1-strong rounded mb-4"
+          />
+        </div>
+        <div class="col-lg-3 mb-4 mb-lg-0">
+          <img
+            src="{{ url_for('static', filename='images/galeri4.png') }}"
+            class="w-100 shadow-1-strong rounded mb-4"
+          />
+
+          <img
+            src="{{ url_for('static', filename='images/galeri8.png') }}"
+            class="w-100 shadow-1-strong rounded mb-4"
+          />
+        </div>
+      </div>
+      <div class="d-flex justify-content-end px-5 py-3">
+        <a
+          class="btn btn-primary p-3 fs-5 text-end text-light"
+          style="
+            text-decoration: none;
+            background-color: #703200;
+            border-radius: 5px;
+            border: none;
+          "
+          href="/galeri"
+          >Selanjutnya</a
+        >
+      </div>
+
+      <!-- <div class="slide-container swiper mb-5">
+        <div class="slide-content">
+          <div class="card-wrapper swiper-wrapper">
+            <div class="swiper-slide">
+              <div
+                class="card sled1 d-flex justify-content-center align-items-center"
+                style="background-color: #eaf8ef; width: 300px; height: 450px"
+              >
+                <div class="card-body text-center">
+                  <div class="row mb-5">
+                    <a
+                      class="d-flex align-items-center flex-column text-dark fw-bolder mt-2"
+                      style="text-decoration: none"
+                      href="pengurusan-surat-keterangan-catatan-kepolisian"
+                      >Pengurusan Surat Keterangan Catatan Kepolisian (SKCK)</a
+                    >
+                  </div>
+
+                  <div class="row mt-5 mb-2 py-5 d-flex justify-content-center">
+                    <div
+                      class="d-flex justify-content-center align-items-center bg-white rounded-circle"
+                      style="width: 150px; height: 150px"
+                    >
+                      <span
+                        class="material-symbols-outlined primary-color py-5 px-3 d-inline align-middle"
+                        >tv_signin</span
+                      >
+                    </div>
+                  </div>
+
+                  <div class="row mt-3 d-flex justify-content-center">
+                    <div
+                      class="btn text-light"
+                      style="
+                        background-color: #327a6d;
+                        border-radius: 20px;
+                        width: 250px;
+                      "
+                    >
+                      <a
+                        class="text-light"
+                        style="text-decoration: none"
+                        href="pengurusan-surat-keterangan-catatan-kepolisian"
+                        >Lihat Selengkapnya</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div
+                class="card sled1 d-flex justify-content-center align-items-center"
+                style="background-color: #eaf8ef; width: 300px; height: 450px"
+              >
+                <div class="card-body text-center">
+                  <div class="row mb-5">
+                    <a
+                      class="d-flex align-items-center flex-column text-dark fw-bolder mt-2"
+                      style="text-decoration: none"
+                      href="pengurusan-surat-keterangan-tidak-mampu"
+                      >Pengurusan Surat Keterangan Tidak Mampu (SKTM)
+                    </a>
+                  </div>
+
+                  <div class="row mt-5 mb-2 py-5 d-flex justify-content-center">
+                    <div
+                      class="d-flex justify-content-center align-items-center bg-white rounded-circle"
+                      style="width: 150px; height: 150px"
+                    >
+                      <span
+                        class="material-symbols-outlined primary-color py-5 px-3 d-inline align-middle"
+                        >two_pager</span
+                      >
+                    </div>
+                  </div>
+
+                  <div class="row mt-3 d-flex justify-content-center">
+                    <div
+                      class="btn text-light"
+                      style="
+                        background-color: #327a6d;
+                        border-radius: 20px;
+                        width: 250px;
+                      "
+                    >
+                      <a
+                        class="text-light"
+                        style="text-decoration: none"
+                        href="pengurusan-surat-keterangan-tidak-mampu"
+                        >Lihat Selengkapnya</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div
+                class="card sled1 d-flex justify-content-center align-items-center"
+                style="background-color: #eaf8ef; width: 300px; height: 450px"
+              >
+                <div class="card-body text-center">
+                  <div class="row mb-5">
+                    <a
+                      class="d-flex align-items-center flex-column text-dark fw-bolder mt-2"
+                      style="text-decoration: none"
+                      href="/pengurusan-surat-keterangan-kehilangan"
+                      >Pengurusan surat keterangan kehilangan
+                    </a>
+                  </div>
+
+                  <div class="row mt-5 mb-2 py-5 d-flex justify-content-center">
+                    <div
+                      class="d-flex justify-content-center align-items-center bg-white rounded-circle"
+                      style="width: 150px; height: 150px"
+                    >
+                      <span
+                        class="material-symbols-outlined primary-color py-5 px-3 d-inline align-middle"
+                        >security</span
+                      >
+                    </div>
+                  </div>
+
+                  <div class="row mt-3 d-flex justify-content-center">
+                    <div
+                      class="btn text-light"
+                      style="
+                        background-color: #327a6d;
+                        border-radius: 20px;
+                        width: 250px;
+                      "
+                    >
+                      <a
+                        class="text-light"
+                        style="text-decoration: none"
+                        href="/pengurusan-surat-keterangan-kehilangan"
+                        >Lihat Selengkapnya</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div
+                class="card sled1 d-flex justify-content-center align-items-center"
+                style="background-color: #eaf8ef; width: 300px; height: 450px"
+              >
+                <div class="card-body text-center">
+                  <div class="row mb-5">
+                    <a
+                      class="d-flex align-items-center flex-column text-dark fw-bolder mt-2"
+                      style="text-decoration: none"
+                      href="#"
+                      >Pengurusan Surat keterangan melahirkan
+                    </a>
+                  </div>
+
+                  <div class="row mt-5 mb-2 py-5 d-flex justify-content-center">
+                    <div
+                      class="d-flex justify-content-center align-items-center bg-white rounded-circle"
+                      style="width: 150px; height: 150px"
+                    >
+                      <span
+                        class="material-symbols-outlined primary-color py-5 px-3 d-inline align-middle"
+                        >switch_account</span
+                      >
+                    </div>
+                  </div>
+
+                  <div class="row mt-3 d-flex justify-content-center">
+                    <div
+                      class="btn text-light"
+                      style="
+                        background-color: #327a6d;
+                        border-radius: 20px;
+                        width: 250px;
+                      "
+                    >
+                      <a
+                        class="text-light"
+                        style="text-decoration: none"
+                        href="/pengurusan-surat-keterangan-melahirkan"
+                      >
+                        Lihat Selengkapnya</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div
+                class="card sled1 d-flex justify-content-center align-items-center"
+                style="background-color: #eaf8ef; width: 300px; height: 450px"
+              >
+                <div class="card-body text-center">
+                  <div class="row mb-5">
+                    <a
+                      class="d-flex align-items-center flex-column text-dark fw-bolder mt-2"
+                      style="text-decoration: none"
+                      href="#"
+                      >Pengurusan surat keterangan Kematian
+                    </a>
+                  </div>
+
+                  <div class="row mt-5 mb-2 py-5 d-flex justify-content-center">
+                    <div
+                      class="d-flex justify-content-center align-items-center bg-white rounded-circle"
+                      style="width: 150px; height: 150px"
+                    >
+                      <span
+                        class="material-symbols-outlined primary-color py-5 px-3 d-inline align-middle"
+                        >position_bottom_left</span
+                      >
+                    </div>
+                  </div>
+
+                  <div class="row mt-3 d-flex justify-content-center">
+                    <div
+                      class="btn text-light"
+                      style="
+                        background-color: #327a6d;
+                        border-radius: 20px;
+                        width: 250px;
+                      "
+                    >
+                      <a
+                        class="text-light"
+                        style="text-decoration: none"
+                        href="/pengurusan-surat-keterangan-kematian"
+                        >Lihat Selengkapnya</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div
+                class="card sled1 d-flex justify-content-center align-items-center"
+                style="background-color: #eaf8ef; width: 300px; height: 450px"
+              >
+                <div class="card-body text-center">
+                  <div class="row mb-5">
+                    <a
+                      class="d-flex align-items-center flex-column text-dark fw-bolder mt-2"
+                      style="text-decoration: none"
+                      href="#"
+                      >surat pengantar pernikahan
+                    </a>
+                  </div>
+
+                  <div class="row mt-5 mb-2 py-5 d-flex justify-content-center">
+                    <div
+                      class="d-flex justify-content-center align-items-center bg-white rounded-circle"
+                      style="width: 150px; height: 150px"
+                    >
+                      <span
+                        class="material-symbols-outlined primary-color py-5 px-3 d-inline align-middle"
+                        >menu_book</span
+                      >
+                    </div>
+                  </div>
+
+                  <div class="row mt-3 d-flex justify-content-center">
+                    <div
+                      class="btn text-light"
+                      style="
+                        background-color: #327a6d;
+                        border-radius: 20px;
+                        width: 250px;
+                      "
+                    >
+                      <a
+                        class="text-light"
+                        style="text-decoration: none"
+                        href="/surat-pengantar-pernikahan"
+                        >Lihat Selengkapnya</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div
+                class="card sled1 d-flex justify-content-center align-items-center"
+                style="background-color: #eaf8ef; width: 300px; height: 450px"
+              >
+                <div class="card-body text-center">
+                  <div class="row mb-5">
+                    <a
+                      class="d-flex align-items-center flex-column text-dark fw-bolder mt-2"
+                      style="text-decoration: none"
+                      href="#"
+                      >Pengurusan Penduduk / Domisili / Usaha
+                    </a>
+                  </div>
+
+                  <div class="row mt-5 mb-2 py-5 d-flex justify-content-center">
+                    <div
+                      class="d-flex justify-content-center align-items-center bg-white rounded-circle"
+                      style="width: 150px; height: 150px"
+                    >
+                      <span
+                        class="material-symbols-outlined primary-color py-5 px-3 d-inline align-middle"
+                        >task</span
+                      >
+                    </div>
+                  </div>
+
+                  <div class="row mt-3 d-flex justify-content-center">
+                    <div
+                      class="btn text-light"
+                      style="
+                        background-color: #327a6d;
+                        border-radius: 20px;
+                        width: 250px;
+                      "
+                    >
+                      <a
+                        class="text-light"
+                        style="text-decoration: none"
+                        href="/pengurusan-penduduk-domisili-usaha"
+                        >Lihat Selengkapnya</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div
+                class="card sled1 d-flex justify-content-center align-items-center"
+                style="background-color: #eaf8ef; width: 300px; height: 450px"
+              >
+                <div class="card-body text-center">
+                  <div class="row mb-5">
+                    <a
+                      class="d-flex align-items-center flex-column text-dark fw-bolder mt-2"
+                      style="text-decoration: none"
+                      href="#"
+                      >Pengurusan Keterangan Ijin Usaha
+                    </a>
+                  </div>
+
+                  <div class="row mt-5 mb-2 py-5 d-flex justify-content-center">
+                    <div
+                      class="d-flex justify-content-center align-items-center bg-white rounded-circle"
+                      style="width: 150px; height: 150px"
+                    >
+                      <span
+                        class="material-symbols-outlined primary-color py-5 px-3 d-inline align-middle"
+                        >text_snippet</span
+                      >
+                    </div>
+                  </div>
+
+                  <div class="row mt-3 d-flex justify-content-center">
+                    <div
+                      class="btn text-light"
+                      style="
+                        background-color: #327a6d;
+                        border-radius: 20px;
+                        width: 250px;
+                      "
+                    >
+                      <a
+                        class="text-light"
+                        style="text-decoration: none"
+                        href="/Pengurusan-Keterangan-Ijin-Usaha"
+                        >Lihat Selengkapnya</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div
+                class="card sled1 d-flex justify-content-center align-items-center"
+                style="background-color: #eaf8ef; width: 300px; height: 450px"
+              >
+                <div class="card-body text-center">
+                  <div class="row mb-5">
+                    <a
+                      class="d-flex align-items-center flex-column text-dark fw-bolder mt-2"
+                      style="text-decoration: none"
+                      href="#"
+                      >Pengurusan Surat keterangan pindah
+                    </a>
+                  </div>
+
+                  <div class="row mt-5 mb-2 py-5 d-flex justify-content-center">
+                    <div
+                      class="d-flex justify-content-center align-items-center bg-white rounded-circle"
+                      style="width: 150px; height: 150px"
+                    >
+                      <span
+                        class="material-symbols-outlined primary-color py-5 px-3 d-inline align-middle"
+                        >oven</span
+                      >
+                    </div>
+                  </div>
+
+                  <div class="row mt-3 d-flex justify-content-center">
+                    <div
+                      class="btn text-light"
+                      style="
+                        background-color: #327a6d;
+                        border-radius: 20px;
+                        width: 250px;
+                      "
+                    >
+                      <a
+                        class="text-light"
+                        style="text-decoration: none"
+                        href="/Pengurusan-Surat-keterangan-pindah"
+                        >Lihat Selengkapnya</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div
+                class="card sled1 d-flex justify-content-center align-items-center"
+                style="background-color: #eaf8ef; width: 300px; height: 450px"
+              >
+                <div class="card-body text-center">
+                  <div class="row mb-5">
+                    <a
+                      class="d-flex align-items-center flex-column text-dark fw-bolder mt-2"
+                      style="text-decoration: none"
+                      href="#"
+                      >Pengurusan Surat keterangan bepergian
+                    </a>
+                  </div>
+
+                  <div class="row mt-5 mb-2 py-5 d-flex justify-content-center">
+                    <div
+                      class="d-flex justify-content-center align-items-center bg-white rounded-circle"
+                      style="width: 150px; height: 150px"
+                    >
+                      <span
+                        class="material-symbols-outlined primary-color py-5 px-3 d-inline align-middle"
+                        >subtitles</span
+                      >
+                    </div>
+                  </div>
+
+                  <div class="row mt-3 d-flex justify-content-center">
+                    <div
+                      class="btn text-light"
+                      style="
+                        background-color: #327a6d;
+                        border-radius: 20px;
+                        width: 250px;
+                      "
+                    >
+                      <a
+                        class="text-light"
+                        style="text-decoration: none"
+                        href="/Pengurusan-Surat-keterangan-bepergian"
+                        >Lihat Selengkapnya</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div
+                class="card sled1 d-flex justify-content-center align-items-center"
+                style="background-color: #eaf8ef; width: 300px; height: 450px"
+              >
+                <div class="card-body text-center">
+                  <div class="row mb-5">
+                    <a
+                      class="d-flex align-items-center flex-column text-dark fw-bolder mt-2"
+                      style="text-decoration: none"
+                      href="#"
+                      >Pengurusan Kredit Usaha Rakyat (KUR)
+                    </a>
+                  </div>
+
+                  <div class="row mt-5 mb-2 py-5 d-flex justify-content-center">
+                    <div
+                      class="d-flex justify-content-center align-items-center bg-white rounded-circle"
+                      style="width: 150px; height: 150px"
+                    >
+                      <span
+                        class="material-symbols-outlined primary-color py-5 px-3 d-inline align-middle"
+                        >topic</span
+                      >
+                    </div>
+                  </div>
+
+                  <div class="row mt-3 d-flex justify-content-center">
+                    <div
+                      class="btn text-light"
+                      style="
+                        background-color: #327a6d;
+                        border-radius: 20px;
+                        width: 250px;
+                      "
+                    >
+                      <a
+                        class="text-light"
+                        style="text-decoration: none"
+                        href="/Pengurusan-Kredit-Usaha-Rakyat"
+                        >Lihat Selengkapnya</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div
+                class="card sled1 d-flex justify-content-center align-items-center"
+                style="background-color: #eaf8ef; width: 300px; height: 450px"
+              >
+                <div class="card-body text-center">
+                  <div class="row mb-5">
+                    <a
+                      class="d-flex align-items-center flex-column text-dark fw-bolder mt-2"
+                      style="text-decoration: none"
+                      href="#"
+                      >surat keterangan permohonan penurunan atau penaikan daya
+                      listrik
+                    </a>
+                  </div>
+
+                  <div class="row mt-5 mb-2 py-5 d-flex justify-content-center">
+                    <div
+                      class="d-flex justify-content-center align-items-center bg-white rounded-circle"
+                      style="width: 150px; height: 150px"
+                    >
+                      <span
+                        class="material-symbols-outlined primary-color py-5 px-3 d-inline align-middle"
+                        >recent_patient</span
+                      >
+                    </div>
+                  </div>
+
+                  <div class="row mt-3 d-flex justify-content-center">
+                    <div
+                      class="btn text-light"
+                      style="
+                        background-color: #327a6d;
+                        border-radius: 20px;
+                        width: 250px;
+                      "
+                    >
+                      <a
+                        class="text-light"
+                        style="text-decoration: none"
+                        href="/surat-keterangan-permohonan-penurunan-atau-penaikan-daya-listrik"
+                        >Lihat Selengkapnya</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div
+                class="card sled1 d-flex justify-content-center align-items-center"
+                style="background-color: #eaf8ef; width: 300px; height: 450px"
+              >
+                <div class="card-body text-center">
+                  <div class="row mb-5">
+                    <a
+                      class="d-flex align-items-center flex-column text-dark fw-bolder mt-2"
+                      style="text-decoration: none"
+                      href="#"
+                      >permohonan perubahan nama
+                    </a>
+                  </div>
+
+                  <div class="row mt-5 mb-2 py-5 d-flex justify-content-center">
+                    <div
+                      class="d-flex justify-content-center align-items-center bg-white rounded-circle"
+                      style="width: 150px; height: 150px"
+                    >
+                      <span
+                        class="material-symbols-outlined primary-color py-5 px-3 d-inline align-middle"
+                        >newsmode</span
+                      >
+                    </div>
+                  </div>
+
+                  <div class="row mt-3 d-flex justify-content-center">
+                    <div
+                      class="btn text-light"
+                      style="
+                        background-color: #327a6d;
+                        border-radius: 20px;
+                        width: 250px;
+                      "
+                    >
+                      <a
+                        class="text-light"
+                        style="text-decoration: none"
+                        href="/permohonan-perubahan-nama"
+                        >Lihat Selengkapnya</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div
+                class="card sled1 d-flex justify-content-center align-items-center"
+                style="background-color: #eaf8ef; width: 300px; height: 450px"
+              >
+                <div class="card-body text-center">
+                  <div class="row mb-5">
+                    <a
+                      class="d-flex align-items-center flex-column text-dark fw-bolder mt-2"
+                      style="text-decoration: none"
+                      href="#"
+                      >Pembuatan Akta Kelahiran anak
+                    </a>
+                  </div>
+
+                  <div class="row mt-5 mb-2 py-5 d-flex justify-content-center">
+                    <div
+                      class="d-flex justify-content-center align-items-center bg-white rounded-circle"
+                      style="width: 150px; height: 150px"
+                    >
+                      <span
+                        class="material-symbols-outlined primary-color py-5 px-3 d-inline align-middle"
+                        >familiar_face_and_zone</span
+                      >
+                    </div>
+                  </div>
+
+                  <div class="row mt-3 d-flex justify-content-center">
+                    <div
+                      class="btn text-light"
+                      style="
+                        background-color: #327a6d;
+                        border-radius: 20px;
+                        width: 250px;
+                      "
+                    >
+                      <a
+                        class="text-light"
+                        style="text-decoration: none"
+                        href="/Pembuatan-Akta-Kelahiran-anak"
+                        >Lihat Selengkapnya</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div
+                class="card sled1 d-flex justify-content-center align-items-center"
+                style="background-color: #eaf8ef; width: 300px; height: 450px"
+              >
+                <div class="card-body text-center">
+                  <div class="row mb-5">
+                    <a
+                      class="d-flex align-items-center flex-column text-dark fw-bolder mt-2"
+                      style="text-decoration: none"
+                      href="#"
+                      >Pembuatan Kartu Keluarga (KK)
+                    </a>
+                  </div>
+
+                  <div class="row mt-5 mb-2 py-5 d-flex justify-content-center">
+                    <div
+                      class="d-flex justify-content-center align-items-center bg-white rounded-circle"
+                      style="width: 150px; height: 150px"
+                    >
+                      <span
+                        class="material-symbols-outlined primary-color py-5 px-3 d-inline align-middle"
+                        >family_restroom</span
+                      >
+                    </div>
+                  </div>
+
+                  <div class="row mt-3 d-flex justify-content-center">
+                    <div
+                      class="btn text-light"
+                      style="
+                        background-color: #327a6d;
+                        border-radius: 20px;
+                        width: 250px;
+                      "
+                    >
+                      <a
+                        class="text-light"
+                        style="text-decoration: none"
+                        href="/Pembuatan-Kartu-Keluarga"
+                        >Lihat Selengkapnya</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div
+                class="card sled1 d-flex justify-content-center align-items-center"
+                style="background-color: #eaf8ef; width: 300px; height: 450px"
+              >
+                <div class="card-body text-center">
+                  <div class="row mb-5">
+                    <a
+                      class="d-flex align-items-center flex-column text-dark fw-bolder mt-2"
+                      style="text-decoration: none"
+                      href="#"
+                      >Pembuatan Surat Pengantar BPJS Kesehatan
+                    </a>
+                  </div>
+
+                  <div class="row mt-5 mb-2 py-5 d-flex justify-content-center">
+                    <div
+                      class="d-flex justify-content-center align-items-center bg-white rounded-circle"
+                      style="width: 150px; height: 150px"
+                    >
+                      <span
+                        class="material-symbols-outlined primary-color py-5 px-3 d-inline align-middle"
+                        >ecg_heart</span
+                      >
+                    </div>
+                  </div>
+
+                  <div class="row mt-3 d-flex justify-content-center">
+                    <div
+                      class="btn text-light"
+                      style="
+                        background-color: #327a6d;
+                        border-radius: 20px;
+                        width: 250px;
+                      "
+                    >
+                      <a
+                        class="text-light"
+                        style="text-decoration: none"
+                        href="/Pembuatan-Surat-Pengantar-BPJS-Kesehatan"
+                        >Lihat Selengkapnya</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="swiper-button-next swiper-navBtn"
+          style="
+            color: #327a6d;
+            padding-left: 25px;
+            font-weight: bolder;
+            height: 10px;
+          "
+        ></div>
+        <div
+          class="swiper-button-prev swiper-navBtn"
+          style="
+            color: #327a6d;
+            padding-right: 25px;
+            font-weight: bolder;
+            height: 10px;
+          "
+        ></div>
+      </div> -->
+    </div>
+
+    <div class="container-fluid py-5" style="background-color: #f5ede6">
+      <div class="text-center">
+        <h2 class="primary-color fw-semibold">Jadwal Kunjungan</h2>
+        <p class="primary-color fw-semibold">
+          Silakan datang dan nikmati pengalaman budaya yang menginspirasi!
+        </p>
+      </div>
+      <div class="slide-container swiper mb-5">
+        <div class="slide-content">
+          <div class="card-wrapper swiper-wrapper">
+            <div class="swiper-slide">
+              <div
+                class="card sled1 d-flex justify-content-center align-items-center"
+                style="background-color: #ffffff; width: 300px; height: 170px"
+              >
+                <div class="card-body text-center">
+                  <div class="row mb-5">
+                    <a
+                      class="d-flex fs-3 align-items-center flex-column fw-bolder mt-2"
+                      style="text-decoration: none; color: #703200"
+                      >Senin</a
+                    >
+                    <a
+                      class="d-flex fs-5 align-items-center flex-column fw-semibold mt-2"
+                      style="text-decoration: none; color: #703200"
+                      >09:00 - 16:00
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div
+                class="card sled1 d-flex justify-content-center align-items-center"
+                style="background-color: #ffffff; width: 300px; height: 170px"
+              >
+                <div class="card-body text-center">
+                  <div class="row mb-5">
+                    <a
+                      class="d-flex fs-3 align-items-center flex-column fw-bolder mt-2"
+                      style="text-decoration: none; color: #703200"
+                      >Selasa</a
+                    >
+                    <a
+                      class="d-flex fs-5 align-items-center flex-column fw-semibold mt-2"
+                      style="text-decoration: none; color: #703200"
+                      >09:00 - 16:00
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div
+                class="card sled1 d-flex justify-content-center align-items-center"
+                style="background-color: #ffffff; width: 300px; height: 170px"
+              >
+                <div class="card-body text-center">
+                  <div class="row mb-5">
+                    <a
+                      class="d-flex fs-3 align-items-center flex-column fw-bolder mt-2"
+                      style="text-decoration: none; color: #703200"
+                      >Rabu</a
+                    >
+                    <a
+                      class="d-flex fs-5 align-items-center flex-column fw-semibold mt-2"
+                      style="text-decoration: none; color: #703200"
+                      >09:00 - 16:00
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div
+                class="card sled1 d-flex justify-content-center align-items-center"
+                style="background-color: #ffffff; width: 300px; height: 170px"
+              >
+                <div class="card-body text-center">
+                  <div class="row mb-5">
+                    <a
+                      class="d-flex fs-3 align-items-center flex-column fw-bolder mt-2"
+                      style="text-decoration: none; color: #703200"
+                      >Kamis</a
+                    >
+                    <a
+                      class="d-flex fs-5 align-items-center flex-column fw-semibold mt-2"
+                      style="text-decoration: none; color: #703200"
+                      >09:00 - 16:00
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div
+                class="card sled1 d-flex justify-content-center align-items-center"
+                style="background-color: #ffffff; width: 300px; height: 170px"
+              >
+                <div class="card-body text-center">
+                  <div class="row mb-5">
+                    <a
+                      class="d-flex fs-3 align-items-center flex-column fw-bolder mt-2"
+                      style="text-decoration: none; color: #703200"
+                      >Jum'at</a
+                    >
+                    <a
+                      class="d-flex fs-5 align-items-center flex-column fw-semibold mt-2"
+                      style="text-decoration: none; color: #703200"
+                      >09:00 - 16:00
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="swiper-button-next swiper-navBtn"
+          style="
+            color: #703200;
+            padding-left: 25px;
+            font-weight: bolder;
+            height: 10px;
+          "
+        ></div>
+        <div
+          class="swiper-button-prev swiper-navBtn"
+          style="
+            color: #703200;
+            padding-right: 25px;
+            font-weight: bolder;
+            height: 10px;
+          "
+        ></div>
+      </div>
+
+      <div class="container"></div>
+    </div>
+
+    <footer>
+      <div class="container-fluid footer">
+        <div class="row">
+          <div class="col-lg-4 p-5">
+            <h4 class="fw-bold text-light mb-5">INF0RMASI</h4>
+            <p class="text-light mb-3">
+              Yayasan Talaga Manggung Simbar Kantjana
+            </p>
+            <p class="text-light">
+              Jln. Talaga Majalengka No. 1, Talagawetan, Kec. Talaga, Kabupaten
+              Majalengka, Jawa Barat 45465
+            </p>
+            <p class="text-light">
+              WA: 0821-2055-7792 <br />
+              Fax: N/A <br />
+              E-mail: museumtalagamanggung@gmail.com
+            </p>
+          </div>
+
+          <div class="col-lg-4 p-5">
+            <h4 class="fw-bold text-light mb-5">NARAHUBUNG</h4>
+            <i class="fa-brands fa-instagram text-light fs-4 px-2"></i>
+            <i class="fa-brands fa-youtube text-light fs-4 px-2"></i>
+            <i class="fa-brands fa-facebook text-light fs-4 px-2"></i>
+            <i class="fa-brands fa-tiktok text-light fs-4 px-2"></i>
+          </div>
+          <div class="col-lg-4 p-5">
+            <div class="d-flex align-items-center">
+              <img
+                src="{{ url_for('static', filename='images/logo-footer.png') }}"
+                alt="Logo"
+                style="width: 50px; margin-right: 10px"
+              />
+              <div class="ml-2">
+                <p class="text-light fw-bold fs-5 m-0">
+                  Museum Talaga Manggung
+                </p>
+                <p class="fs-6 text-light m-0">
+                  Balai Konservasi Sejarah Budaya Sunda
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        style="background-color: #281608; padding: 20px"
+        class="container-fluid text-center"
+      >
+        <p style="color: #5b5b5b">
+          <span style="color: #ffff"
+            >Yayasan Talaga Manggung Simbar Kantjana 2024.
+          </span>
+          All Rights Reserved. Powered by
+          <span style="color: #ffff">No Name</span>
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      var swiper = new Swiper(".slide-content", {
+        slidesPerView: 4,
+        spaceBetween: 25,
+        loop: true,
+        centerSlide: "true",
+        fade: "true",
+        grabCursor: "true",
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+          dynamicBullets: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          0: {
+            slidesPerView: 1,
+          },
+          520: {
+            slidesPerView: 2,
+          },
+          950: {
+            slidesPerView: 3,
+          },
+        },
+      });
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

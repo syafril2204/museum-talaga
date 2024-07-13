@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Museum</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static', filename='images/Logos.png') }}"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/landingpage.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"
+      integrity="sha512-Ysw1DcK1P+uYLqprEAzNQJP+J4hTx4t/3X2nbVwszao8wD+9afLjBQYjz7Uk4ADP+Er++mJoScI42ueGtQOzEA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.css"
+      integrity="sha512-pmAAV1X4Nh5jA9m+jcvwJXFQvCBi3T17aZ1KWkqXr7g/O2YMvO8rfaa5ETWDuBvRq6fbDjlw4jHL44jNTScaKg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
+    <style>
+      table,
+      th,
+      td {
+        border: 5px solid #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="adminActions">
+      <input type="checkbox" name="adminToggle" class="adminToggle" />
+      <a class="adminButton" href="/chatbot"
+        ><i class="fa-brands fa-rocketchat"></i
+      ></a>
+    </div>
+    <nav class="navbar navbar-expand-lg bg-light navbar-light fixed-top">
+      <!-- Container wrapper -->
+      <div class="container-fluid px-5">
+        <!-- Navbar brand -->
+        <a class="navbar-brand" href="/">
+          <img
+            src="{{ url_for('static', filename='images/logo.png') }}"
+            alt="Logo"
+            class="d-inline align-text-top"
+            style="width: 50px"
+          />
+        </a>
+
+        <div class="container d-block">
+          <p class="primary-color fw-bold fs-5 m-0 ml-2">
+            Museum Talaga Manggung
+          </p>
+          <p class="fs-6 primary-color m-0">
+            Balai Konservasi Sejarah Budaya Sunda
+          </p>
+        </div>
+        <!-- Toggle button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-mdb-toggle="collapse"
+          data-mdb-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Collapsible wrapper -->
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarSupportedContent"
+        >
+          <!-- Left links -->
+          <ul class="navbar-nav ms-auto mb-2 px-5 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link fs-6 primary-color" href="/home">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link fs-6 primary-color"
+                aria-current="page"
+                href="/tentang"
+                >Tentang</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active fs-6 primary-color" href="/informasi"
+                >Informasi
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-6 primary-color" href="/seputar-tamabot"
+                >Seputar&nbsp;Tamabot</a
+              >
+            </li>
+            <!-- <li class="nav-item">
+            <a
+              class="nav-link fs-6 text-light border rounded-circle px-3 bg-success border-success"
+              href="#"
+              ><i class="fa-brands fa-rocketchat"></i
+            ></a>
+          </li> -->
+          </ul>
+          <!-- Left links -->
+        </div>
+        <!-- Collapsible wrapper -->
+      </div>
+      <!-- Container wrapper -->
+    </nav>
+
+    <div class="container-fluid px-5" style="margin-top: 120px">
+      <nav aria-label="breadcrumb" style="background-color: #f8f8f8">
+        <ol class="breadcrumb py-2 px-4">
+          <li class="breadcrumb-item">
+            <a href="/"><i class="fa-solid fa-house"></i></a>
+          </li>
+          <li class="breadcrumb-item"><a href="#">Artikel</a></li>
+        </ol>
+      </nav>
+    </div>
+
+    <div class="container-fluid px-5 mt-5 mb-5">
+      <div class="row">
+        <h1 class="primary-color fw-bold fs-4">
+          Nyiramkeun Arca Simbar Kancana yang Menjadi Sejarah
+        </h1>
+        <div style="color: #9a9a9a; font-size: 14px" class="row d-inline py-3">
+          <p class="d-inline">
+            <i class="fa-solid fa-calendar-days"></i> Mar 27, 2024
+          </p>
+          <p class="d-inline">
+            <i class="fa-solid fa-user"></i> Talaga Manggung
+          </p>
+        </div>
+
+        <img
+          class="img-fluid py-3"
+          style="border-radius: 10px"
+          src="{{ url_for('static', filename='images/berita3.png') }}"
+          alt=""
+        />
+
+        <p class="content-artikel" style="color: #9a9a9a">
+          Nyiramkeun adalah salah satu upacara adat yang kaya akan makna dan
+          simbolisme di budaya Sunda. Salah satu praktik penting dalam upacara
+          ini adalah Nyiramkeun arca Simbar Kancana, sebuah tindakan
+          penghormatan dan kepercayaan yang mendalam terhadap arca yang dianggap
+          keramat dan sakral dalam kebudayaan Sunda.
+        </p>
+        <p class="content-artikel" style="color: #9a9a9a">
+          Arca Simbar Kancana adalah lambang kekuatan dan kemuliaan dalam
+          kepercayaan tradisional Sunda. Dikenal sebagai simbol spiritual yang
+          memiliki energi positif dan perlindungan, arca ini menjadi objek
+          pemujaan dan penghormatan yang sangat dihormati oleh masyarakat
+          setempat.
+        </p>
+        <p class="content-artikel" style="color: #9a9a9a">
+          Dalam upacara Nyiramkeun, arca Simbar Kancana disucikan dengan air
+          yang dianggap suci, seperti air dari tujuh mata air yang memiliki
+          makna spiritual. Proses penyiraman ini diyakini dapat membersihkan
+          arca dari energi negatif dan membawa berkah serta perlindungan bagi
+          komunitas yang mempersembahkan upacara ini.
+        </p>
+
+        <p class="content-artikel" style="color: #9a9a9a">
+          Meskipun upacara ini bersifat sakral, masyarakat Sunda juga terbuka
+          untuk mempromosikan pemahaman dan apresiasi terhadap tradisi
+          Nyiramkeun arca Simbar Kancana kepada publik yang tertarik untuk
+          memahami lebih dalam tentang budaya dan kepercayaan Sunda.
+        </p>
+
+        <p class="content-artikel" style="color: #9a9a9a">
+          Dengan menghormati arca Simbar Kancana melalui upacara Nyiramkeun,
+          masyarakat Sunda terus menjaga dan melestarikan warisan budaya yang
+          menjadi bagian tak terpisahkan dari identitas dan kebanggaan mereka.
+          Ini adalah bukti nyata dari kekuatan spiritual dan keharmonisan dalam
+          menjaga hubungan antara manusia, alam semesta, dan warisan leluhur
+          yang berharga.
+        </p>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container-fluid footer">
+        <div class="row">
+          <div class="col-lg-4 p-5">
+            <h4 class="fw-bold text-light mb-5">INF0RMASI</h4>
+            <p class="text-light mb-3">
+              Yayasan Talaga Manggung Simbar Kantjana
+            </p>
+            <p class="text-light">
+              Jln. Talaga Majalengka No. 1, Talagawetan, Kec. Talaga, Kabupaten
+              Majalengka, Jawa Barat 45465
+            </p>
+            <p class="text-light">
+              WA: 0821-2055-7792 <br />
+              Fax: N/A <br />
+              E-mail: museumtalagamanggung@gmail.com
+            </p>
+          </div>
+
+          <div class="col-lg-4 p-5">
+            <h4 class="fw-bold text-light mb-5">NARAHUBUNG</h4>
+            <i class="fa-brands fa-instagram text-light fs-4 px-2"></i>
+            <i class="fa-brands fa-youtube text-light fs-4 px-2"></i>
+            <i class="fa-brands fa-facebook text-light fs-4 px-2"></i>
+            <i class="fa-brands fa-tiktok text-light fs-4 px-2"></i>
+          </div>
+          <div class="col-lg-4 p-5">
+            <div class="d-flex align-items-center">
+              <img
+                src="{{ url_for('static', filename='images/logo-footer.png') }}"
+                alt="Logo"
+                style="width: 50px; margin-right: 10px"
+              />
+              <div class="ml-2">
+                <p class="text-light fw-bold fs-5 m-0">
+                  Museum Talaga Manggung
+                </p>
+                <p class="fs-6 text-light m-0">
+                  Balai Konservasi Sejarah Budaya Sunda
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        style="background-color: #281608; padding: 20px"
+        class="container-fluid text-center"
+      >
+        <p style="color: #5b5b5b">
+          <span style="color: #ffff"
+            >Yayasan Talaga Manggung Simbar Kantjana 2024.
+          </span>
+          All Rights Reserved. Powered by
+          <span style="color: #ffff">No Name</span>
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      var swiper = new Swiper(".slide-content", {
+        slidesPerView: 4,
+        spaceBetween: 25,
+        loop: true,
+        centerSlide: "true",
+        fade: "true",
+        grabCursor: "true",
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+          dynamicBullets: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          0: {
+            slidesPerView: 1,
+          },
+          520: {
+            slidesPerView: 2,
+          },
+          950: {
+            slidesPerView: 3,
+          },
+        },
+      });
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
